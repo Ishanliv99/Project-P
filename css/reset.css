@@ -1,0 +1,16 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.clrfix:before,
+.clrfix:after {
+  content: "";
+  display: table;
+} 
+.clrfix:after {
+  clear: both;
+}
+.clrfix {
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
