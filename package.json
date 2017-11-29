@@ -1,0 +1,23 @@
+{
+  "name": "project-p",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ishanliv99/Project-P.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ishanliv99/Project-P/issues"
+  },
+  "homepage": "https://github.com/Ishanliv99/Project-P#readme",
+  "description": "",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
+}
