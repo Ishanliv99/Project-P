@@ -1,38 +1,86 @@
-#panel-top {
-  display: block;
-  /*width: 100%;*/
-  margin: auto;
-  height: 50px; 
-  /*background-color : #123123;*/
+#main-wrapper {
+    width: 90%;
+}
 
+#panel-top {
+    display: block;
+    width: 90%;
+    margin: auto;
+    height: 80px;
+    position: absolute;
+    /*background-color : #123123;*/
+}
+
+#top-left {
+    float: left;
+}
+
+#heading {
+  float: right;
+  padding: 10px;
+}
+
+#top-right {
+    float: right;
+}
+
+#panel-mid {
+    /*width: 90%;*/
+    margin: auto;
 }
 
 #panel-left {
-  /*float: left;*/
-  width: 100px;
-  display: block;
-  margin: 30px 10px;
-  /*background-color : #123123;*/
-
+    float: left;
+    width: 60px;
+    /*display: inline;*/
+    margin: 30px 30px;
+    /*background-color : #123123;*/
 }
 
-#panel-left button{
-  cursor: pointer;
-  /*float: left;*/
+#panel-left button {
+    cursor: pointer;
+    margin: 10px 0px;
+    /*float: left;*/
 }
 
 #canvas-container {
-  float: left;
-  width: auto;
-  position: relative;
-  background-color: #FFF;
+    float: left;
+    width: 902px;
+    position: relative;
+    /*margin: 30px;*/
+}
+
+#canvas-container :first-child {
+    background-color: #FFF;
 }
 
 #panel-right {
-  float: right;
-  width: 250px;
-  margin: 30px 10px;
-  position: relative;
-  /*background-color : #123123;*/
+    float: right;
+    width: 280px;
+    /*margin: 0px 60px;*/
+    position: relative;
+    /*background-color : #123123;*/
+}
 
+#panel-right button {
+    cursor: pointer;
+    margin: 0px 5px;
+    /*float: left;*/
+}
+
+#panel-bottom {
+    /*width: 90%;*/
+    margin: auto;
+}
+
+#bottom-left {
+    width: 45%;
+    margin: auto;
+    float: left;
+}
+
+#bottom-right {
+    width: 45%;
+    margin: auto;
+    float: right;
 }

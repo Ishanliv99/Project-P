@@ -6,7 +6,7 @@ class ToolBox {
     this.spray = new Spray();
     this.text = new Text();
     this.rect = new Rectangle();
-    this.pick = new Pick();
+    // this.pick = new Pick();
 
     this.currentTool = this.pencil;
 
@@ -16,7 +16,7 @@ class ToolBox {
     panelLeft.appendChild(this.spray.element);
     panelLeft.appendChild(this.text.element);
     panelLeft.appendChild(this.rect.element);
-    panelLeft.appendChild(this.pick.element);
+    // panelLeft.appendChild(this.pick.element);
 
     this.pencil.element.onclick = (event) => {
       this.currentTool = this.pencil;
@@ -40,10 +40,6 @@ class ToolBox {
 
     this.rect.element.onclick = (event) => {
       this.currentTool = this.rect;
-    }
-
-    this.pick.element.onclick = (event) => {
-      this.currentTool = this.pick;
     }
   }
 }

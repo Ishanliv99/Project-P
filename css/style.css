@@ -1,19 +1,43 @@
 .canvasLayer {
-  border:1px solid #000000;
-  margin: 30px 200px;
-}
-/*.canvasLayer :first-child {
-  background-color: #FFF;
-}
-*/
-#main-wrapper  > * {
-  display:  table;
+    border: 1px solid #000000;
+    /*margin: 30px 10px;*/
 }
 
-#main-wrapper  {
-  display:  table;
-  width:  100%;
-  height:  100vh;
-  background-color : #555555;
-  /*overflow-y: hidden;*/
+#main-wrapper>* {
+    display: table;
+    position: relative;
+}
+
+#main-wrapper {
+    display: table;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(230deg, rgb(75, 207, 147), rgb(75, 121, 207), rgb(162, 75, 207)) 0% 0% / 300% 300%;
+    overflow-y: hidden;
+    font-family: Open Sans;
+}
+
+#panel-top {
+    color: #FFF;
+}
+
+#upper-right {
+    color: #FFF;
+    margin-bottom: 10px;
+}
+
+#upper-right h1 {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #FFF;
+}
+
+#panel-bottom {
+      color: #FFF;
+}
+
+.info {
+  position: relative;
 }

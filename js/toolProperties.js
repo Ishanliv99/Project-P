@@ -3,6 +3,7 @@ class ToolProperties {
     this.colorInput = document.createElement('input');
     this.colorInput.type = 'color';
     this.colorInput.style.margin = '5px';
+    this.colorInput.inputd = 'color'
 
     this.colorInput.addEventListener('change', () => {
       this.color = this.colorInput.value;
@@ -11,6 +12,7 @@ class ToolProperties {
     this.sizeInput = document.createElement('input');
     this.sizeInput.style.margin = '5px';
     this.sizeInput.type = 'range';
+    this.sizeInput.id = 'size'
     this.sizeInput.min = 1;
     this.sizeInput.max = 100;
     this.sizeInput.value = 1;

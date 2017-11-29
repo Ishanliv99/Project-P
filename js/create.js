@@ -1,29 +1,41 @@
 let mainWrapper = document.getElementById('main-wrapper');
 
-let panelTop = document.createElement('div');
-panelTop.id = 'panel-top';
-mainWrapper.appendChild(panelTop);
+// let panelTop = document.createElement('div');
+// panelTop.id = 'panel-top';
+// mainWrapper.appendChild(panelTop);
 
-let panelRight = document.createElement('div');
-panelRight.id = 'panel-right';
-mainWrapper.appendChild(panelRight);
+// let topLeft = document.createElement('div');
+// topLeft.id = 'top-left';
+// panelTop.appendChild(topLeft);
 
-let canvasContainer = document.createElement('div');
-canvasContainer.id = 'canvas-container';
-mainWrapper.appendChild(canvasContainer);
+// let topRight = document.createElement('div');
+// topRight.id = 'top-right';
+// panelTop.appendChild(topRight);
 
-let panelLeft = document.createElement('div');
-panelLeft.id = 'panel-left';
-mainWrapper.appendChild(panelLeft);
+// let panelRight = document.createElement('div');
+// panelRight.id = 'panel-right';
+// mainWrapper.appendChild(panelRight);
 
-let upperRight = document.createElement('div');
-upperRight.className = 'clrfix';
-let lowerRight = document.createElement('div');
+// let canvasContainer = document.createElement('div');
+// canvasContainer.id = 'canvas-container';
+// mainWrapper.appendChild(canvasContainer);
 
-upperRight.id = 'upper-right';
-lowerRight.id = 'lower-right';
+// let panelLeft = document.createElement('div');
+// panelLeft.id = 'panel-left';
+// mainWrapper.appendChild(panelLeft);
+// let upperRight = document.createElement('div');
+// let lowerRight = document.createElement('div');
 
-panelRight.appendChild(upperRight);
-panelRight.appendChild(lowerRight);
+let panelTop = document.getElementById('panel-top');
+let panelLeft = document.getElementById('panel-left');
+let panelRight = document.getElementById('panel-right');
+let canvasContainer = document.getElementById('canvas-container');
+let topLeft = document.getElementById('top-left');
+let topRight = document.getElementById('top-right');
+let upperRight = document.getElementById('upper-right');
+let lowerRight = document.getElementById('lower-right');
+let panelBottom = document.getElementById('panel-bottom');
+let bottomLeft = document.getElementById('bottom-left');
+let bottomRight = document.getElementById('bottom-right');
 
 let painter = new MainPainter();

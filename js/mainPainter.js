@@ -6,17 +6,17 @@ class MainPainter {
 
     this.toolBox = new ToolBox();
 
+    this.toolProperties = new ToolProperties();
+    bottomLeft.appendChild(this.toolProperties.colorInput);
+    bottomRight.appendChild(this.toolProperties.sizeInput);
+
     this.undo = new Undo();
     this.redo = new Redo();
     this.save = new Save();
-    panelTop.appendChild(this.undo.element);
-    panelTop.appendChild(this.redo.element);
-    panelTop.appendChild(this.save.element);
+    topRight.appendChild(this.undo.element);
+    topRight.appendChild(this.redo.element);
+    topRight.appendChild(this.save.element);
 
-    this.toolProperties = new ToolProperties();
-    panelTop.appendChild(this.toolProperties.colorInput);
-    panelTop.appendChild(this.toolProperties.sizeInput);
-    
     this.layerControl = new LayerControl();
 
     this.layerControl.createButton.addEventListener('click', this.createNew = (event) => {
@@ -81,12 +81,10 @@ class MainPainter {
       })
     });
 
-    this.layerControl.deleteButton.onclick = (event) => {
+    this.layerControl.deleteButton.addEventListener ('click',(event) => {
       if (this.canvases.length > 0) {
         lowerRight.removeChild(this.activeLayer.element);
         canvasContainer.removeChild(this.activeLayer.canvasLayer);
-        // lowerRight.removeChild(this.activeLayer.moveUp);
-        // lowerRight.removeChild(this.activeLayer.moveDown);
         this.canvases.splice(this.canvases.indexOf(this.activeLayer), 1);
         if (this.canvases.length != 0) {
           this.activeLayer = this.canvases[this.canvases.length - 1];
@@ -96,9 +94,9 @@ class MainPainter {
         this.history.push(this.activeLayer.canvasLayer.toDataURL());
         this.arrangeLayers();
       }
-    }
+    })
 
-    this.layerControl.mergeButton.onclick = (event) => {
+    this.layerControl.mergeButton.addEventListener ('click',(event) => {
       if (this.canvases.length > 1 && (this.canvases.length - 1) != this.canvases.indexOf(this.activeLayer)) {
         let selectedLayer = this.canvases[this.canvases.indexOf(this.activeLayer) + 1];
         let cx = this.activeLayer.canvasLayer.getContext('2d');
@@ -110,9 +108,9 @@ class MainPainter {
         this.history.push(this.activeLayer.canvasLayer.toDataURL());
         this.arrangeLayers();
       }
-    }
+    })
 
-    this.layerControl.duplicateButton.onclick = (event) => {
+    this.layerControl.duplicateButton.addEventListener ('click',(event) => {
       if (this.canvases.length > 0) {
         let lastLayer = this.activeLayer;
         this.createNew();
@@ -123,7 +121,7 @@ class MainPainter {
         this.history.push(this.activeLayer.canvasLayer.toDataURL());
         this.arrangeLayers();
       }
-    }
+    })
 
     this.layerControl.moveUp.addEventListener('click', (event) => {
       if (this.canvases.length > 1 && this.canvases.indexOf(this.activeLayer) != 0) {
@@ -194,7 +192,7 @@ class MainPainter {
   arrangeLayers() {
     // console.log(this.canvases.length);
     this.canvases.forEach((layer) => {
-      layer.element.style.top = this.canvases.indexOf(layer) * 52 + 45 + 'px';
+      layer.element.style.top = this.canvases.indexOf(layer) * 52 + 50 + 'px';
       layer.canvasLayer.style.zIndex = this.canvases.indexOf(layer)
     })
   }

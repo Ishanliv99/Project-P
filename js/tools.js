@@ -17,10 +17,10 @@
       addEventListener('mouseup', end);
     }
 
-    let colorAt = (cx, x, y) => {
-      this.pixel = cx.getImageData(x, y, 1, 1).data;
-      return 'rgb(' + this.pixel[0] + ', ' + this.pixel[1] + ', ' + this.pixel[2] + ')';
-    }
+    // let colorAt = (cx, x, y) => {
+    //   this.pixel = cx.getImageData(x, y, 1, 1).data;
+    //   return 'rgb(' + this.pixel[0] + ', ' + this.pixel[1] + ', ' + this.pixel[2] + ')';
+    // }
 
     // Call a given function for all horizontal and vertical neighbors
     // of the given point.
@@ -83,6 +83,7 @@
         this.element.style.width = '20px';
         this.element.style.height = '20px';
         this.element.style.padding = '20px';
+        // this.element.style.position = 'absolute';
         this.element.style.backgroundImage = 'url(images/pencil.png)';
         this.element.style.backgroundSize = '20px 20px';
         this.element.style.backgroundRepeat = 'no-repeat';
@@ -305,24 +306,24 @@
       };
     }
 
-    class Pick {
-      constructor() {
-        this.element = document.createElement('button');
-        this.element.id = 'drop';
-        this.element.style.width = '20px';
-        this.element.style.height = '20px';
-        this.element.style.padding = '20px';
-        this.element.style.backgroundImage = 'url(images/drop.png)';
-        this.element.style.backgroundSize = '20px 20px';
-        this.element.style.backgroundRepeat = 'no-repeat';
-        this.element.style.backgroundPosition = 'center';
-        this.element.style.borderRadius = '20px';
-      }
+    // class Pick {
+    //   constructor() {
+    //     this.element = document.createElement('button');
+    //     this.element.id = 'drop';
+    //     this.element.style.width = '20px';
+    //     this.element.style.height = '20px';
+    //     this.element.style.padding = '20px';
+    //     this.element.style.backgroundImage = 'url(images/drop.png)';
+    //     this.element.style.backgroundSize = '20px 20px';
+    //     this.element.style.backgroundRepeat = 'no-repeat';
+    //     this.element.style.backgroundPosition = 'center';
+    //     this.element.style.borderRadius = '20px';
+    //   }
 
-      pickColor(event, canvas) {
-        let cx = canvas.getContext('2d');
-        let pos = relativePos(event, canvas);
-        let color = colorAt(cx, pos.x, pos.y);
-        console.log(color);
-      };
-    }
+    //   pickColor(event, canvas) {
+    //     let cx = canvas.getContext('2d');
+    //     let pos = relativePos(event, canvas);
+    //     let pickedColor = colorAt(cx, pos.x, pos.y);
+    //     this.color = pickedColor;
+    //   };
+    // }
