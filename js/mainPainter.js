@@ -78,10 +78,11 @@ class MainPainter {
       this.activeLayer.canvasLayer.addEventListener('mouseup', (event) => {
         this.history.push(this.activeLayer.canvasLayer.toDataURL());
         this.head = this.history.length - 1;
+        console.log(this.history);
       })
     });
 
-    this.layerControl.deleteButton.addEventListener ('click',(event) => {
+    this.layerControl.deleteButton.addEventListener('click', (event) => {
       if (this.canvases.length > 0) {
         lowerRight.removeChild(this.activeLayer.element);
         canvasContainer.removeChild(this.activeLayer.canvasLayer);
@@ -96,7 +97,7 @@ class MainPainter {
       }
     })
 
-    this.layerControl.mergeButton.addEventListener ('click',(event) => {
+    this.layerControl.mergeButton.addEventListener('click', (event) => {
       if (this.canvases.length > 1 && (this.canvases.length - 1) != this.canvases.indexOf(this.activeLayer)) {
         let selectedLayer = this.canvases[this.canvases.indexOf(this.activeLayer) + 1];
         let cx = this.activeLayer.canvasLayer.getContext('2d');
@@ -110,7 +111,7 @@ class MainPainter {
       }
     })
 
-    this.layerControl.duplicateButton.addEventListener ('click',(event) => {
+    this.layerControl.duplicateButton.addEventListener('click', (event) => {
       if (this.canvases.length > 0) {
         let lastLayer = this.activeLayer;
         this.createNew();
@@ -152,6 +153,7 @@ class MainPainter {
         img.src = this.history[this.head];
         img.onload = () => {
           cx.drawImage(img, 0, 0);
+          this.history.push(this.activeLayer.canvasLayer.toDataURL());
         }
       }
     })
@@ -163,6 +165,7 @@ class MainPainter {
         cx.clearRect(0, 0, 800, 400);
         let img = new Image();
         img.src = this.history[this.head];
+        // console.log(this.head,this.history.length)
         img.onload = () => {
           cx.drawImage(img, 0, 0);
         }
@@ -189,8 +192,8 @@ class MainPainter {
     // })
   }
 
+    // to arrange the order of the layers after each click
   arrangeLayers() {
-    // console.log(this.canvases.length);
     this.canvases.forEach((layer) => {
       layer.element.style.top = this.canvases.indexOf(layer) * 52 + 50 + 'px';
       layer.canvasLayer.style.zIndex = this.canvases.indexOf(layer)

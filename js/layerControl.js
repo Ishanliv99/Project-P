@@ -6,7 +6,7 @@ class LayerControl {
         this.createButton.style.padding = '15px';
         this.createButton.className = 'layer';
         this.createButton.style.backgroundImage = 'url(images/add.png)';
-        this.createButton.style.backgroundSize = '15px 15px';
+        this.createButton.style.backgroundSize = '20px 20px';
         this.createButton.style.backgroundRepeat = 'no-repeat';
         this.createButton.style.backgroundPosition = 'center';
         this.createButton.style.float = 'left';
@@ -19,7 +19,7 @@ class LayerControl {
         this.deleteButton.style.padding = '15px';
         this.deleteButton.className = 'layer';
         this.deleteButton.style.backgroundImage = 'url(images/delete.png)';
-        this.deleteButton.style.backgroundSize = '15px 15px';
+        this.deleteButton.style.backgroundSize = '20px 20px';
         this.deleteButton.style.backgroundRepeat = 'no-repeat';
         this.deleteButton.style.backgroundPosition = 'center';
         this.deleteButton.style.float = 'left';
@@ -32,7 +32,7 @@ class LayerControl {
         this.mergeButton.style.padding = '15px';
         this.mergeButton.className = 'layer';
         this.mergeButton.style.backgroundImage = 'url(images/merge.png)';
-        this.mergeButton.style.backgroundSize = '15px 15px';
+        this.mergeButton.style.backgroundSize = '20px 20px';
         this.mergeButton.style.backgroundRepeat = 'no-repeat';
         this.mergeButton.style.backgroundPosition = 'center';
         this.mergeButton.style.float = 'left';
@@ -45,7 +45,7 @@ class LayerControl {
         this.duplicateButton.style.padding = '15px';
         this.duplicateButton.className = 'layer';
         this.duplicateButton.style.backgroundImage = 'url(images/duplicate.png)';
-        this.duplicateButton.style.backgroundSize = '15px 15px';
+        this.duplicateButton.style.backgroundSize = '20px 20px';
         this.duplicateButton.style.backgroundRepeat = 'no-repeat';
         this.duplicateButton.style.backgroundPosition = 'center';
         this.duplicateButton.style.float = 'left';
@@ -58,7 +58,7 @@ class LayerControl {
         this.moveUp.style.padding = '15px';
         this.moveUp.className = 'layer';
         this.moveUp.style.backgroundImage = 'url(images/up.png)';
-        this.moveUp.style.backgroundSize = '15px 15px';
+        this.moveUp.style.backgroundSize = '20px 20px';
         this.moveUp.style.backgroundRepeat = 'no-repeat';
         this.moveUp.style.backgroundPosition = 'center';
         this.moveUp.style.float = 'left';
@@ -71,7 +71,7 @@ class LayerControl {
         this.moveDown.style.padding = '15px';
         this.moveDown.className = 'layer';
         this.moveDown.style.backgroundImage = 'url(images/down.png)';
-        this.moveDown.style.backgroundSize = '15px 15px';
+        this.moveDown.style.backgroundSize = '20px 20px';
         this.moveDown.style.backgroundRepeat = 'no-repeat';
         this.moveDown.style.backgroundPosition = 'center';
         this.moveDown.style.float = 'left';

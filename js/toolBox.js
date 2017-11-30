@@ -9,6 +9,7 @@ class ToolBox {
     // this.pick = new Pick();
 
     this.currentTool = this.pencil;
+    // this.currentTool.element.style.backgroundColor = '#06A0D8';
 
     panelLeft.appendChild(this.pencil.element);
     panelLeft.appendChild(this.eraser.element);
@@ -20,26 +21,37 @@ class ToolBox {
 
     this.pencil.element.onclick = (event) => {
       this.currentTool = this.pencil;
+      // this.currentTool.element.style.backgroundColor = '#06A0D8';
     }
 
     this.eraser.element.onclick = (event) => {
       this.currentTool = this.eraser;
+      // this.currentTool.element.style.backgroundColor = '#06A0D8';
     }
 
     this.fillall.element.onclick = (event) => {
       this.currentTool = this.fillall;
+      // this.currentTool.element.style.backgroundColor = '#06A0D8';
     }
 
     this.spray.element.onclick = (event) => {
       this.currentTool = this.spray;
+      // this.currentTool.element.style.backgroundColor = '#06A0D8';
     }
 
     this.text.element.onclick = (event) => {
       this.currentTool = this.text;
+      // this.currentTool.element.style.backgroundColor = '#06A0D8';
     }
 
     this.rect.element.onclick = (event) => {
       this.currentTool = this.rect;
+      // this.currentTool.element.style.backgroundColor = '#06A0D8';
     }
+
+    // if (this.pencil ==  this.currentTool)
+    //   this.pencil.element.style.backgroundColor = '#06A0D8';
+    // else
+    //   this.pencil.element.style.backgroundColor = '#FFF';
   }
 }

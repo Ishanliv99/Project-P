@@ -1,3 +1,4 @@
+// to find the relative position of the mouse with rexpect to the canvas
     let relativePos = (event, element) => {
       let rect = element.getBoundingClientRect();
       return {
@@ -6,6 +7,7 @@
       };
     }
 
+// to track the drag event on the mouse
     let trackDrag = (onMove, onEnd) => {
       let end = (event) => {
         removeEventListener('mousemove', onMove);
@@ -22,8 +24,7 @@
     //   return 'rgb(' + this.pixel[0] + ', ' + this.pixel[1] + ', ' + this.pixel[2] + ')';
     // }
 
-    // Call a given function for all horizontal and vertical neighbors
-    // of the given point.
+    // to find the horizontal and vertical neighbours of a point
     let forAllNeighbors = (point, fn) => {
       fn({
         x: point.x,
@@ -43,7 +44,7 @@
       });
     }
 
-    // Given two positions, returns true when they hold the same color.
+    // to check if two positions hold the same color, returns true if it does
     let isSameColor = (data, pos1, pos2) => {
       this.offset1 = (pos1.x + pos1.y * data.width) * 4;
       this.offset2 = (pos2.x + pos2.y * data.width) * 4;
@@ -54,7 +55,7 @@
       return true;
     }
 
-
+    // to generate random points inside a raidus
     let randomPointInRadius = (radius) => {
       for (;;) {
         this.x = Math.random() * 2 - 1;
@@ -67,6 +68,7 @@
       }
     }
 
+    // returns the values required to make a rectangle
     let rectangleFrom = (a, b) => {
       return {
         left: Math.min(a.x, b.x),
@@ -85,7 +87,7 @@
         this.element.style.padding = '20px';
         // this.element.style.position = 'absolute';
         this.element.style.backgroundImage = 'url(images/pencil.png)';
-        this.element.style.backgroundSize = '20px 20px';
+        this.element.style.backgroundSize = '30px 30px';
         this.element.style.backgroundRepeat = 'no-repeat';
         this.element.style.backgroundPosition = 'center';
         this.element.style.borderRadius = '20px';
@@ -122,7 +124,7 @@
         this.element.style.height = '20px';
         this.element.style.padding = '20px';
         this.element.style.backgroundImage = 'url(images/eraser.png)';
-        this.element.style.backgroundSize = '20px 20px';
+        this.element.style.backgroundSize = '30px 30px';
         this.element.style.backgroundRepeat = 'no-repeat';
         this.element.style.backgroundPosition = 'center';
         this.element.style.borderRadius = '20px';
@@ -151,7 +153,7 @@
         this.element.style.height = '20px';
         this.element.style.padding = '20px';
         this.element.style.backgroundImage = 'url(images/bucket.png)';
-        this.element.style.backgroundSize = '20px 20px';
+        this.element.style.backgroundSize = '30px 30px';
         this.element.style.backgroundRepeat = 'no-repeat';
         this.element.style.backgroundPosition = 'center';
         this.element.style.borderRadius = '20px';
@@ -165,12 +167,13 @@
 
         let data = cx.getImageData(0, 0, canvas.width,
           canvas.height);
-        // An array with one place for each pixel in the image.
+
+        // an array with one place for each pixel in the image.]
         let alreadyFilled = new Array(data.width * data.height);
 
-        // This is a list of same-colored pixel coordinates that we have
-        // not handled yet.
+        // a list of same colored pixel co-ordinates
         let workList = [startPos];
+
         while (workList.length) {
           let pos = workList.pop();
           let offset = pos.x + data.width * pos.y;
@@ -198,7 +201,7 @@
         this.element.style.height = '20px';
         this.element.style.padding = '20px';
         this.element.style.backgroundImage = 'url(images/spray.png)';
-        this.element.style.backgroundSize = '20px 20px';
+        this.element.style.backgroundSize = '30px 30px';
         this.element.style.backgroundRepeat = 'no-repeat';
         this.element.style.backgroundPosition = 'center';
         this.element.style.borderRadius = '20px';
@@ -221,6 +224,7 @@
               currentPos.y + offset.y, 1, 1);
           }
         }, 25);
+
         trackDrag((event) => {
           currentPos = relativePos(event, canvas);
         }, () => {
@@ -238,7 +242,7 @@
         this.element.style.height = '20px';
         this.element.style.padding = '20px';
         this.element.style.backgroundImage = 'url(images/text.png)';
-        this.element.style.backgroundSize = '20px 20px';
+        this.element.style.backgroundSize = '30px 30px';
         this.element.style.backgroundRepeat = 'no-repeat';
         this.element.style.backgroundPosition = 'center';
         this.element.style.borderRadius = '20px';
@@ -266,7 +270,7 @@
         this.element.style.height = '20px';
         this.element.style.padding = '20px';
         this.element.style.backgroundImage = 'url(images/rectangle.png)';
-        this.element.style.backgroundSize = '20px 20px';
+        this.element.style.backgroundSize = '30px 30px';
         this.element.style.backgroundRepeat = 'no-repeat';
         this.element.style.backgroundPosition = 'center';
         this.element.style.borderRadius = '20px';
@@ -314,7 +318,7 @@
     //     this.element.style.height = '20px';
     //     this.element.style.padding = '20px';
     //     this.element.style.backgroundImage = 'url(images/drop.png)';
-    //     this.element.style.backgroundSize = '20px 20px';
+    //     this.element.style.backgroundSize = '30px 30px';
     //     this.element.style.backgroundRepeat = 'no-repeat';
     //     this.element.style.backgroundPosition = 'center';
     //     this.element.style.borderRadius = '20px';
